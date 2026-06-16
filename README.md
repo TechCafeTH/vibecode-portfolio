@@ -26,3 +26,4 @@ Build [project list HTML page], same design as [Google Stitch Zip Export]
 
 Free static website hosting:
 https://app.netlify.com/drop
+(Free for 1 hour. Register for permanently free & changeable domain name)
