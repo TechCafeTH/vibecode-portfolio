@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perth Woratana | Analytics Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'BMW Type Next Latin';
+            src: local('Helvetica Neue'), local('Arial');
+            font-weight: 300;
+        }
+        @font-face {
+            font-family: 'BMW Type Next Latin';
+            src: local('Helvetica Neue Bold'), local('Arial Bold');
+            font-weight: 700;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* 0px border radius enforcement across all elements */
+        * {
+            border-radius: 0 !important;
+        }
+
+        body {
+            font-family: 'BMW Type Next Latin', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fcf9f8",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1b1c1c",
+                        "on-primary-fixed": "#001a41",
+                        "secondary-container": "#d9e0eb",
+                        "success": "#22c55e",
+                        "on-secondary-fixed": "#151c24",
+                        "m-blue-light": "#0066b1",
+                        "canvas": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c0c7d2",
+                        "outline-variant": "#c2c6d5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5c636d",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-surface-variant": "#424753",
+                        "m-red": "#e22718",
+                        "on-tertiary-container": "#ffebe2",
+                        "body-strong": "#1a1a1a",
+                        "surface": "#fcf9f8",
+                        "tertiary": "#8d3b00",
+                        "on-surface": "#1b1c1c",
+                        "outline": "#727784",
+                        "surface-container": "#f0eded",
+                        "surface-bright": "#fcf9f8",
+                        "secondary-fixed": "#dce3ee",
+                        "surface-soft": "#f7f7f7",
+                        "muted": "#6b6b6b",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary": "#ffffff",
+                        "primary-disabled": "#d6d6d6",
+                        "primary": "#0051ae",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-primary-fixed-variant": "#004494",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#b44d00",
+                        "ink": "#262626",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2e1",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-primary": "#adc6ff",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-card": "#fafafa",
+                        "surface-dim": "#dcd9d9",
+                        "hairline": "#e6e6e6",
+                        "warning": "#f59e0b",
+                        "on-tertiary-fixed-variant": "#783100",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "muted-soft": "#9a9a9a",
+                        "inverse-surface": "#303030",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary": "#585f68",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#005bc1",
+                        "surface-strong": "#ebebeb",
+                        "primary-active": "#0653b6",
+                        "body": "#3c3c3c",
+                        "on-primary-container": "#ebefff",
+                        "error": "#dc2626",
+                        "hairline-strong": "#cccccc",
+                        "primary-container": "#1c69d4",
+                        "on-secondary-fixed-variant": "#404750",
+                        "surface-variant": "#e4e2e1"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section": "80px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "sm": "12px",
+                        "xxs": "4px"
+                    },
+                    "fontFamily": {
+                        "display": ["'BMW Type Next Latin'", "sans-serif"],
+                        "body": ["'BMW Type Next Latin'", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-white">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full h-[64px] bg-canvas z-50 border-b border-hairline flex justify-between items-center px-lg md:px-xl transition-all duration-700 opacity-100 translate-y-0">
+<div class="font-display text-display-sm font-bold text-on-background tracking-tight uppercase">
+        Perth Woratana
+    </div>
+<div class="hidden md:flex gap-xl">
+<a class="font-nav-link text-nav-link uppercase tracking-wider text-secondary hover:text-primary transition-colors duration-200" href="#experience">Experience</a>
+<a class="font-nav-link text-nav-link uppercase tracking-wider text-secondary hover:text-primary transition-colors duration-200" href="#skills">Skills</a>
+<a class="font-nav-link text-nav-link uppercase tracking-wider text-secondary hover:text-primary transition-colors duration-200" href="#certifications">Certifications</a>
+<a class="font-nav-link text-nav-link uppercase tracking-wider text-secondary hover:text-primary transition-colors duration-200" href="#contact">Contact</a>
+</div>
+<button class="bg-primary text-white font-button text-button h-[48px] px-lg uppercase tracking-wider hover:bg-primary-active transition-colors duration-300">
+        Download CV
+    </button>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[800px] flex items-center pt-[64px] overflow-hidden bg-on-background">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Perth Woratana professional profile" class="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida/AP1WRLvdtGKACgDtPyx9n5yogcOKy-6WW55PIBhbS9_vnKGw7LJG55V4glPgWAWvM-cPEcJow1kmxjfev0Y1EC5W_OnRwZATumK-MkKNfnVLxfJcxs39jDGQ25Fih1YYMHU71VHO7KYZOMhD_i6bFTS61B567fDqUUE9lXiFfFJljmdq3HXvC2SO4NOONn20h6PhV7WrhnGDnWnpsyu4gH5CodMYh3PAOcFgr3KVqv-EY0PsLQhNEXtRrrRmLEaE"/>
+</div>
+<!-- Shader Overlay -->
+<canvas class="absolute inset-0 z-1 w-full h-full pointer-events-none opacity-60" id="hero-shader"></canvas>
+<div class="relative z-10 w-full max-w-screen-xl mx-auto px-lg">
+<div class="max-w-4xl space-y-md">
+<h1 class="font-display text-display-xl text-white leading-tight">
+                Perth Woratana<br/>Ngarmtrakulchol
+            </h1>
+<p class="font-display text-display-sm text-secondary-fixed-dim font-light max-w-2xl">
+                Analytics Engineer @ Canva | AWS Community Builder
+            </p>
+<div class="pt-xl">
+<a class="inline-flex items-center justify-center bg-primary text-white font-button text-button h-[48px] px-xxl uppercase tracking-widest hover:bg-primary-active transition-all duration-300" href="#experience" style="background: linear-gradient(135deg, rgb(28, 105, 212) 0%, rgb(79, 70, 229) 100%);">
+                    View Experience
+                </a>
+</div>
+</div>
+</div>
+</header>
+<!-- Summary Section -->
+<section class="py-section bg-canvas border-b border-hairline transition-all duration-700 opacity-100 translate-y-0">
+<div class="max-w-screen-xl mx-auto px-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8">
+<h2 class="font-title-lg text-title-lg text-primary uppercase tracking-widest mb-md">Professional Summary</h2>
+<p class="font-title-md text-title-md text-on-background mb-lg leading-relaxed">
+                    Precision-driven Analytics Engineer focused on bridging the gap between raw data and actionable business intelligence. With deep expertise in modern data stacks and cloud architecture, I specialize in engineering robust pipelines that scale with organizational growth.
+                </p>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                    Beyond the terminal, I am a passionate AWS Community Builder and technical storyteller, sharing insights on GCP, AWS, and modern data engineering practices with the global developer community. My approach combines rigorous engineering discipline with a user-centric mindset.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-section bg-surface" id="experience">
+<div class="max-w-screen-xl mx-auto px-lg">
+<h2 class="font-display text-display-lg text-on-background mb-[64px] uppercase tracking-tighter">Experience</h2>
+<div class="grid grid-cols-1 gap-gutter">
+<!-- Canva -->
+<div class="bg-surface-card border border-hairline p-xl grid md:grid-cols-12 gap-lg items-start transition-all duration-700 opacity-100 translate-y-0">
+<div class="md:col-span-4">
+<span class="font-label-uppercase text-label-uppercase text-muted-soft block mb-xxs">2022 — Present</span>
+<h3 class="font-display text-display-sm text-on-background uppercase">Canva</h3>
+<p class="font-title-sm text-title-sm text-primary">Analytics Engineer</p>
+</div>
+<div class="md:col-span-8">
+<p class="font-body-md text-body-md text-body leading-relaxed mb-md">
+                        Driving the evolution of Canva's data platform through high-performance SQL modelling and automated workflow orchestration. Collaborating with cross-functional teams to deliver enterprise-scale analytics solutions.
+                    </p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-md py-xxs border border-hairline font-caption text-caption uppercase text-muted">Snowflake</span>
+<span class="px-md py-xxs border border-hairline font-caption text-caption uppercase text-muted">dbt</span>
+<span class="px-md py-xxs border border-hairline font-caption text-caption uppercase text-muted">Python</span>
+</div>
+</div>
+</div>
+<!-- Servian -->
+<div class="bg-surface-card border border-hairline p-xl grid md:grid-cols-12 gap-lg items-start transition-all duration-700 opacity-100 translate-y-0">
+<div class="md:col-span-4">
+<span class="font-label-uppercase text-label-uppercase text-muted-soft block mb-xxs">2020 — 2022</span>
+<h3 class="font-display text-display-sm text-on-background uppercase">Servian</h3>
+<p class="font-title-sm text-title-sm text-primary">Data Consultant</p>
+</div>
+<div class="md:col-span-8">
+<p class="font-body-md text-body-md text-body leading-relaxed mb-md">
+                        Architected and implemented cloud-native data platforms for Tier-1 enterprise clients. Specialized in GCP and Azure migrations, ensuring high availability and data integrity across complex environments.
+                    </p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-md py-xxs border border-hairline font-caption text-caption uppercase text-muted">Google Cloud</span>
+<span class="px-md py-xxs border border-hairline font-caption text-caption uppercase text-muted">Terraform</span>
+<span class="px-md py-xxs border border-hairline font-caption text-caption uppercase text-muted">BigQuery</span>
+</div>
+</div>
+</div>
+<!-- Telstra -->
+<div class="bg-surface-card border border-hairline p-xl grid md:grid-cols-12 gap-lg items-start transition-all duration-700 opacity-100 translate-y-0">
+<div class="md:col-span-4">
+<span class="font-label-uppercase text-label-uppercase text-muted-soft block mb-xxs">2018 — 2020</span>
+<h3 class="font-display text-display-sm text-on-background uppercase">Telstra</h3>
+<p class="font-title-sm text-title-sm text-primary">Data Analyst</p>
+</div>
+<div class="md:col-span-8">
+<p class="font-body-md text-body-md text-body leading-relaxed mb-md">
+                        Optimized network performance analytics through sophisticated dashboarding and automated reporting. Leveraged data science methodologies to predict network congestion and improve customer experience.
+                    </p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-md py-xxs border border-hairline font-caption text-caption uppercase text-muted">SQL</span>
+<span class="px-md py-xxs border border-hairline font-caption text-caption uppercase text-muted">Tableau</span>
+<span class="px-md py-xxs border border-hairline font-caption text-caption uppercase text-muted">AWS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-section bg-canvas transition-all duration-700 opacity-100 translate-y-0" id="skills">
+<div class="max-w-screen-xl mx-auto px-lg">
+<h2 class="font-display text-display-lg text-on-background mb-[64px] uppercase tracking-tighter">Technical Arsenal</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Programming -->
+<div class="border-t-[4px] border-primary pt-lg">
+<h3 class="font-label-uppercase text-label-uppercase text-primary mb-xl">Programming</h3>
+<div class="space-y-md">
+<div class="flex justify-between items-end border-b border-hairline pb-xs">
+<span class="font-title-md text-title-md font-bold uppercase">Python</span>
+<span class="font-body-sm text-body-sm text-muted uppercase">Advanced</span>
+</div>
+<div class="flex justify-between items-end border-b border-hairline pb-xs">
+<span class="font-title-md text-title-md font-bold uppercase">SQL</span>
+<span class="font-body-sm text-body-sm text-muted uppercase">Expert</span>
+</div>
+<div class="flex justify-between items-end border-b border-hairline pb-xs">
+<span class="font-title-md text-title-md font-bold uppercase">JavaScript</span>
+<span class="font-body-sm text-body-sm text-muted uppercase">Intermediate</span>
+</div>
+</div>
+</div>
+<!-- Cloud Platforms -->
+<div class="border-t-[4px] border-primary pt-lg">
+<h3 class="font-label-uppercase text-label-uppercase text-primary mb-xl">Cloud Platforms</h3>
+<div class="space-y-md">
+<div class="flex justify-between items-end border-b border-hairline pb-xs">
+<span class="font-title-md text-title-md font-bold uppercase">AWS</span>
+<span class="font-body-sm text-body-sm text-muted uppercase">Community Builder</span>
+</div>
+<div class="flex justify-between items-end border-b border-hairline pb-xs">
+<span class="font-title-md text-title-md font-bold uppercase">GCP</span>
+<span class="font-body-sm text-body-sm text-muted uppercase">Architect</span>
+</div>
+<div class="flex justify-between items-end border-b border-hairline pb-xs">
+<span class="font-title-md text-title-md font-bold uppercase">Azure</span>
+<span class="font-body-sm text-body-sm text-muted uppercase">Associate</span>
+</div>
+</div>
+</div>
+<!-- Tech Stack -->
+<div class="border-t-[4px] border-primary pt-lg">
+<h3 class="font-label-uppercase text-label-uppercase text-primary mb-xl">Stack</h3>
+<div class="space-y-md">
+<div class="flex justify-between items-end border-b border-hairline pb-xs">
+<span class="font-title-md text-title-md font-bold uppercase">Snowflake</span>
+<span class="font-body-sm text-body-sm text-muted uppercase">Expert</span>
+</div>
+<div class="flex justify-between items-end border-b border-hairline pb-xs">
+<span class="font-title-md text-title-md font-bold uppercase">dbt</span>
+<span class="font-body-sm text-body-sm text-muted uppercase">Advanced</span>
+</div>
+<div class="flex justify-between items-end border-b border-hairline pb-xs">
+<span class="font-title-md text-title-md font-bold uppercase">Terraform</span>
+<span class="font-body-sm text-body-sm text-muted uppercase">Infrastructure</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications Section -->
+<section class="py-section bg-surface-container-low" id="certifications">
+<div class="max-w-screen-xl mx-auto px-lg">
+<h2 class="font-display text-display-lg text-on-background mb-[64px] uppercase tracking-tighter">Certifications</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Cert 1 -->
+<div class="bg-canvas border border-hairline group hover:border-primary transition-colors duration-300 transition-all duration-700 opacity-100 translate-y-0">
+<div class="aspect-video bg-surface overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChvWkPy5yyJK8wDzoHktIRbMf74LFQ95YCiMyyVrux7mYWw-oFvIo7sABYoR6j56MS7muRGlHWXyV1nh6O3opSG8A4Ge7xql0G5JG0AvtVVhEDQ-JmVdNTv_76bAnM424RO-rHobFJzq23zHwKHbDQ3Rw10MtAORn5Y9Jow607SwEDvn5F_gcXxSHuEAlnIqE5nHP2bgmkSN5k766qM9bT3B0Sznewhv5g0KlXKNDRZ5mWgpjy2GfokyJHieRwfrQqRdUOnP0OqQwK"/>
+</div>
+<div class="p-lg">
+<h4 class="font-title-md text-title-md text-on-background mb-xxs">SnowPro Core</h4>
+<p class="font-body-sm text-body-sm text-muted mb-md">Snowflake Certification</p>
+<a class="font-label-uppercase text-label-uppercase text-primary hover:underline" href="#">Verify Badge</a>
+</div>
+</div>
+<!-- Cert 2 -->
+<div class="bg-canvas border border-hairline group hover:border-primary transition-colors duration-300 transition-all duration-700 opacity-100 translate-y-0">
+<div class="aspect-video bg-surface overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA39hktbcti6lpbH5j6sTP7N4lF9DNwDI3eGVx6aUBqiH7PiswOCB5kpmhy5TbY-KkVOOeKtXVVV33EWITWIcGMo7r_-Za1G_K8ssx_ML-gD3tTPbwYUwSBmtzZGN7FFBuxxZqtrRm8DCc1rxq_sHaSO8uUEJ4CKTNtWya9HPFQ5mjsc8Q7Lww1-IxnwS-e1H4028h_rqWcTthSq1wJTa5hhhq-xzbG5envfYen95JtN--2Xd7EtYDRR9joLjW-20b0RsnknRCwBLkj"/>
+</div>
+<div class="p-lg">
+<h4 class="font-title-md text-title-md text-on-background mb-xxs">GCP Professional</h4>
+<p class="font-body-sm text-body-sm text-muted mb-md">Cloud Architect</p>
+<a class="font-label-uppercase text-label-uppercase text-primary hover:underline" href="#">Verify Badge</a>
+</div>
+</div>
+<!-- Cert 3 -->
+<div class="bg-canvas border border-hairline group hover:border-primary transition-colors duration-300 transition-all duration-700 opacity-100 translate-y-0">
+<div class="aspect-video bg-surface overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbCapmm33dTb5IbHKrTWOILC69katbCfQxfoVyVL-zDJmqZ4TAkS8HHLChUgjrmCHSPwr-PgSEoDvedW12119Qr8N8QdQ36cX3PECt7mAB5iMBtHG0xaTvBxg54Jr5beT_Jv2GJIVhX1E-mmd7D2MUA_hd_x8xjiAgdeEpa8Kn-SRCZv_ApFb3v8dcdQTXLwYmMsEwUGu1hCbvtKa1oGxSVLrjmb26OY-TXH2w_y4Yh7C3Atb8vtPP32IXJ7k_d9LvOGHeE32uSaxZ"/>
+</div>
+<div class="p-lg">
+<h4 class="font-title-md text-title-md text-on-background mb-xxs">AWS Certified</h4>
+<p class="font-body-sm text-body-sm text-muted mb-md">Solutions Architect</p>
+<a class="font-label-uppercase text-label-uppercase text-primary hover:underline" href="#">Verify Badge</a>
+</div>
+</div>
+<!-- Cert 4 -->
+<div class="bg-canvas border border-hairline group hover:border-primary transition-colors duration-300 transition-all duration-700 opacity-100 translate-y-0">
+<div class="aspect-video bg-surface overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpKgVwdPhFjUEpXhY23RzFkgBXIkIe7IBkCKTQfF13OFKLAEt1Layh29pdRlfmlKKADIl6ZXzkhRvj1Xq4cWOBFIqJS_6NACp1EmUsCYu3elPm4x9zoV29pps089D0-yYiR8r_ozdmHK9BZ-C9l_PivQSEiZ72qLw3u26xHKFAm8DCWkJc7axvfryQR_h4MXOKDxHZ9SM6DoBci6Q5RsD8TpmQlSMCrzIcUyz76yNV8m3ewW8p-77lrRkFPLPKv6c7poiUkEL7AEAF"/>
+</div>
+<div class="p-lg">
+<h4 class="font-title-md text-title-md text-on-background mb-xxs">dbt Certified</h4>
+<p class="font-body-sm text-body-sm text-muted mb-md">Analytics Engineering</p>
+<a class="font-label-uppercase text-label-uppercase text-primary hover:underline" href="#">Verify Badge</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact CTA -->
+<section class="bg-on-background py-[100px] relative overflow-hidden" id="contact">
+<div class="absolute inset-0 z-0 opacity-30">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1K5H6ifMdPrHQ8VNNqQQj6yWprAThywxs7xy0FoP_949EQDPQijn1f5AygiWWKsE89XVwevZOYgW8_Y9ezpvp1mYJ0tolAG8SeHqnsn_-liaPfeiga5IEU4gNuZFk43sQPhNDoXcPNmwq0Xmx_3VsXdo2lneQXE7g7SJgrXY7h2dHqwAKxeiMoNcneDg3c9dbTW4T2r6C2GK1Z5iShx-bDdSzvMJ6iSmMwDR6UWlLVXL88sIpxKcJvY9hKf_zQUDDPSbHX95tXXFB"/>
+</div>
+<div class="relative z-10 max-w-screen-xl mx-auto px-lg text-center">
+<h2 class="font-display text-display-lg text-white mb-lg uppercase tracking-tight">Let's build something precise.</h2>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-xxl max-w-2xl mx-auto font-light">
+            Currently open to discussing innovative data engineering projects, community collaborations, and strategic architectural consultations.
+        </p>
+<div class="flex flex-col md:flex-row justify-center gap-md">
+<a class="inline-flex items-center justify-center bg-primary text-white font-button text-button h-[48px] px-xxl uppercase tracking-widest hover:bg-primary-active transition-all duration-300" href="mailto:contact@perth.com" style="background: linear-gradient(135deg, rgb(28, 105, 212) 0%, rgb(79, 70, 229) 100%);">
+                Get in Touch
+            </a>
+<a class="inline-flex items-center justify-center border border-white text-white font-button text-button h-[48px] px-xxl uppercase tracking-widest hover:bg-white hover:text-on-background transition-all duration-300" href="https://linkedin.com">
+                LinkedIn
+            </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-on-background border-t border-on-secondary-fixed-variant">
+<div class="max-w-screen-xl mx-auto px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-lg">
+<div class="font-label-uppercase text-label-uppercase text-on-primary tracking-widest">
+            PERTH WORATANA
+        </div>
+<p class="font-caption text-caption text-on-secondary-container order-last md:order-none">
+            © 2024 Perth Woratana Ngarmtrakulchol. Engineered with Precision.
+        </p>
+<div class="flex gap-xl">
+<a class="font-caption text-caption text-on-secondary-container hover:text-on-primary transition-colors duration-200 uppercase tracking-widest" href="#">LinkedIn</a>
+<a class="font-caption text-caption text-on-secondary-container hover:text-on-primary transition-colors duration-200 uppercase tracking-widest" href="#">GitHub</a>
+<a class="font-caption text-caption text-on-secondary-container hover:text-on-primary transition-colors duration-200 uppercase tracking-widest" href="#">Medium</a>
+</div>
+</div>
+</footer>
+<script>
+    // Smooth reveal logic for cards
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-4');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.bg-surface-card, .bg-canvas').forEach(el => {
+        el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+        observer.observe(el);
+    });
+
+    // WebGL Shader Implementation
+    const initShader = () => {
+        const canvas = document.getElementById('hero-shader');
+        if (!canvas) return;
+        const gl = canvas.getContext('webgl');
+        if (!gl) return;
+
+        const vertexSource = `
+            attribute vec2 position;
+            varying vec2 v_texCoord;
+            void main() {
+                v_texCoord = position * 0.5 + 0.5;
+                v_texCoord.y = 1.0 - v_texCoord.y;
+                gl_Position = vec4(position, 0.0, 1.0);
+            }
+        `;
+
+        const fragmentSource = `
+            precision highp float;
+            varying vec2 v_texCoord;
+            uniform float u_time;
+            uniform vec2 u_resolution;
+            uniform vec2 u_mouse;
+
+            float hash(vec2 p) {
+                p = fract(p * vec2(123.34, 456.21));
+                p += dot(p, p + 45.32);
+                return fract(p.x * p.y);
+            }
+
+            void main() {
+                vec2 uv = v_texCoord;
+                vec2 p = (uv - 0.5) * 2.0;
+                p.x *= u_resolution.x / u_resolution.y;
+                
+                // Base transparent background - using 0.0 to allow overlaying
+                vec3 finalColor = vec3(0.0);
+                
+                // Grid settings
+                float gridScale = 15.0;
+                vec2 gridP = uv * gridScale;
+                vec2 id = floor(gridP);
+                vec2 f = fract(gridP);
+                
+                // Nodes (Particles)
+                for(float y = -1.0; y <= 1.0; y++) {
+                    for(float x = -1.0; x <= 1.0; x++) {
+                        vec2 offset = vec2(x, y);
+                        vec2 neighborId = id + offset;
+                        
+                        float n = hash(neighborId);
+                        vec2 pos = offset + 0.5 + 0.4 * vec2(sin(u_time * 0.5 + n * 6.28), cos(u_time * 0.7 + n * 6.28));
+                        
+                        float dist = length(f - pos);
+                        
+                        // Draw points
+                        float pointSize = 0.05 * (0.5 + 0.5 * sin(u_time + n * 10.0));
+                        float point = smoothstep(pointSize, 0.0, dist);
+                        finalColor += point * vec3(0.11, 0.41, 0.83) * 0.8; // BMW Blue glow
+                        
+                        // Lines (connections)
+                        for(float y2 = -1.0; y2 <= 1.0; y2++) {
+                            for(float x2 = -1.0; x2 <= 1.0; x2++) {
+                                if(x2 == 0.0 && y2 == 0.0) continue;
+                                vec2 offset2 = vec2(x2, y2);
+                                vec2 neighborId2 = neighborId + offset2;
+                                float n2 = hash(neighborId2);
+                                vec2 pos2 = offset2 + offset + 0.5 + 0.4 * vec2(sin(u_time * 0.5 + n2 * 6.28), cos(u_time * 0.7 + n2 * 6.28));
+                                
+                                vec2 pa = f - pos;
+                                vec2 ba = pos2 - pos;
+                                float h = clamp(dot(pa, ba)/dot(ba, ba), 0.0, 1.0);
+                                float lineDist = length(pa - ba * h);
+                                
+                                float lineThickness = 0.01;
+                                float line = smoothstep(lineThickness, 0.0, lineDist);
+                                
+                                float dNodes = length(pos - pos2);
+                                line *= smoothstep(1.5, 0.5, dNodes);
+                                
+                                finalColor += line * vec3(0.11, 0.41, 0.83) * 0.2;
+                            }
+                        }
+                    }
+                }
+                
+                // Mouse interaction
+                vec2 mouse = u_mouse / u_resolution;
+                float mDist = length(uv - mouse);
+                finalColor += 0.1 * vec3(0.11, 0.41, 0.83) * smoothstep(0.2, 0.0, mDist);
+
+                gl_FragColor = vec4(finalColor, 1.0);
+            }
+        `;
+
+        const createShader = (type, source) => {
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            return shader;
+        };
+
+        const program = gl.createProgram();
+        gl.attachShader(program, createShader(gl.VERTEX_SHADER, vertexSource));
+        gl.attachShader(program, createShader(gl.FRAGMENT_SHADER, fragmentSource));
+        gl.linkProgram(program);
+        gl.useProgram(program);
+
+        const buffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
+
+        const positionLoc = gl.getAttribLocation(program, 'position');
+        gl.enableVertexAttribArray(positionLoc);
+        gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
+
+        const timeLoc = gl.getUniformLocation(program, 'u_time');
+        const resLoc = gl.getUniformLocation(program, 'u_resolution');
+        const mouseLoc = gl.getUniformLocation(program, 'u_mouse');
+
+        let mouseX = 0, mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        const resize = () => {
+            canvas.width = canvas.clientWidth;
+            canvas.height = canvas.clientHeight;
+            gl.viewport(0, 0, canvas.width, canvas.height);
+        };
+        window.addEventListener('resize', resize);
+        resize();
+
+        const render = (time) => {
+            gl.uniform1f(timeLoc, time * 0.001);
+            gl.uniform2f(resLoc, canvas.width, canvas.height);
+            gl.uniform2f(mouseLoc, mouseX, canvas.height - mouseY);
+            gl.drawArrays(gl.TRIANGLES, 0, 6);
+            requestAnimationFrame(render);
+        };
+        requestAnimationFrame(render);
+    };
+
+    window.addEventListener('DOMContentLoaded', initShader);
+</script>
+</body></html>
