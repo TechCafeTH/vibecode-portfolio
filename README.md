@@ -23,3 +23,6 @@ Create more pages from code:
 ```
 Build [project list HTML page], same design as [Google Stitch Zip Export] 
 ```
+
+Free static website hosting:
+https://app.netlify.com/drop
