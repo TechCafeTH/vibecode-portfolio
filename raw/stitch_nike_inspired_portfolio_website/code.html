@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Helvetica+Now+Text:wght@100..900&amp;family=Helvetica+Now+Text+Medium:wght@100..900&amp;family=Nike+Futura+ND:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Nike Futura ND';
+            src: url('https://fonts.cdnfonts.com/css/futura-extra-bold-condensed') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'Helvetica Now Display Medium';
+            src: url('https://fonts.cdnfonts.com/css/helvetica-now-display-plus') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'Helvetica Now Text';
+            src: url('https://fonts.cdnfonts.com/css/helvetica-now-text-plus') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Helvetica Now Text Medium';
+            src: url('https://fonts.cdnfonts.com/css/helvetica-now-text-plus') format('woff2');
+            font-weight: 500;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        ::selection {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Kinetic shader background simulation */
+        .hero-bg {
+            background: radial-gradient(circle at 50% 50%, #fdf8f8 0%, #f1edec 100%);
+            position: relative;
+        }
+        .hero-bg::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#ebe7e6",
+                        "on-surface-variant": "#444748",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "on-error-container": "#93000a",
+                        "soft-cloud": "#F5F5F5",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-primary-container": "#858383",
+                        "tertiary-container": "#1d1b1a",
+                        "tertiary": "#000000",
+                        "surface-dim": "#ddd9d8",
+                        "background": "#fdf8f8",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c8c6c5",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "surface-bright": "#fdf8f8",
+                        "inverse-surface": "#313030",
+                        "info": "#1151FF",
+                        "surface-container": "#f1edec",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "ash": "#4B4B4D",
+                        "tertiary-fixed": "#e6e1df",
+                        "on-primary-fixed": "#1c1b1b",
+                        "outline-variant": "#c4c7c7",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-error": "#ffffff",
+                        "secondary": "#5d5f5f",
+                        "surface": "#fdf8f8",
+                        "charcoal": "#39393B",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "surface-container-low": "#f7f3f2",
+                        "secondary-container": "#dfe0e0",
+                        "hairline": "#CACACB",
+                        "error": "#ba1a1a",
+                        "sale": "#D30005",
+                        "primary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-tertiary-container": "#868381",
+                        "mute": "#707072",
+                        "accent-teal": "#0A7281",
+                        "stone": "#9E9EA0",
+                        "on-secondary-container": "#616363",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-container": "#1c1b1b",
+                        "outline": "#747878",
+                        "hairline-soft": "#E5E5E5",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#5f5e5e",
+                        "on-surface": "#1c1b1b",
+                        "accent-pink": "#ED1AA0",
+                        "primary-fixed": "#e5e2e1",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "success": "#007D48",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "grid-base": "8px",
+                        "xxs": "2px",
+                        "xxl": "30px",
+                        "section": "48px",
+                        "md": "12px",
+                        "xs": "4px",
+                        "lg": "18px",
+                        "sm": "8px",
+                        "xl": "24px"
+                    },
+                    "fontFamily": {
+                        "heading-lg": ["Helvetica Now Display Medium"],
+                        "heading-md": ["Helvetica Now Display Medium"],
+                        "body-strong": ["Helvetica Now Text Medium"],
+                        "body-md": ["Helvetica Now Text"],
+                        "caption-sm": ["Helvetica Now Text Medium"],
+                        "button-md": ["Helvetica Now Text Medium"],
+                        "display-campaign": ["Nike Futura ND"],
+                        "link-md": ["Helvetica Now Text"],
+                        "utility-xs": ["Helvetica Neue"],
+                        "caption-md": ["Helvetica Now Text Medium"],
+                        "button-sm": ["Helvetica Now Text Medium"],
+                        "button-lg": ["Helvetica Now Display Medium"],
+                        "heading-xl": ["Helvetica Now Display Medium"]
+                    },
+                    "fontSize": {
+                        "heading-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "heading-md": ["16px", {"lineHeight": "1.75", "fontWeight": "500"}],
+                        "body-strong": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "caption-sm": ["12px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "button-md": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "display-campaign": ["96px", {"lineHeight": "0.9", "fontWeight": "500"}],
+                        "link-md": ["16px", {"lineHeight": "1.75", "fontWeight": "500"}],
+                        "utility-xs": ["9px", {"lineHeight": "1.75", "fontWeight": "500"}],
+                        "caption-md": ["14px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "button-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "button-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "heading-xl": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-primary selection:bg-primary selection:text-on-primary antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-hairline transition-all duration-300 px-xl py-md flex justify-between items-center" id="main-header">
+<div class="flex items-center gap-md">
+<span class="font-display-campaign text-heading-lg tracking-tighter uppercase text-primary">PERTH W.</span>
+</div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="font-heading-md text-heading-md uppercase tracking-tighter text-primary font-bold hover:text-primary transition-colors" href="#overview">OVERVIEW</a>
+<a class="font-heading-md text-heading-md uppercase tracking-tighter text-mute hover:text-primary transition-colors" href="#experience">EXPERIENCE</a>
+<a class="font-heading-md text-heading-md uppercase tracking-tighter text-mute hover:text-primary transition-colors" href="#skills">SKILLS</a>
+<a class="font-heading-md text-heading-md uppercase tracking-tighter text-mute hover:text-primary transition-colors" href="#contact">CONTACT</a>
+</nav>
+<div class="flex items-center">
+<button class="font-heading-md text-heading-md uppercase tracking-tighter text-primary hover:opacity-70 transition-opacity">CONTACT</button>
+</div>
+</header>
+<main class="pt-[72px]">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex flex-col items-center justify-center text-center px-section overflow-hidden hero-bg" id="overview">
+<div class="relative z-10 space-y-lg">
+<h1 class="font-display-campaign text-[140px] leading-[0.85] tracking-tighter uppercase">
+                    PERTH<br/>WORATANA
+                </h1>
+<p class="font-body-md text-body-md text-mute max-w-xl mx-auto uppercase tracking-widest">
+                    Data Engineer &amp; Solution Architect | Specializing in scalable cloud ecosystems and high-performance data platforms.
+                </p>
+<div class="pt-xl">
+<a class="inline-block bg-primary text-on-primary font-button-md text-button-md py-lg px-xl rounded-full hover:bg-ash transition-all duration-300" href="#contact">
+                        GET IN TOUCH
+                    </a>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-section px-section bg-surface" id="experience">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row gap-section">
+<div class="md:w-1/4">
+<h2 class="font-display-campaign text-heading-xl uppercase tracking-tighter sticky top-24">Experience</h2>
+</div>
+<div class="md:w-3/4 space-y-section">
+<!-- Experience Item 1 -->
+<div class="reveal border-b border-hairline pb-section grid grid-cols-1 md:grid-cols-12 gap-xl group">
+<div class="md:col-span-1 flex justify-start items-start">
+<div class="w-16 h-16 flex items-center justify-center bg-surface-container rounded-lg overflow-hidden p-xs">
+<img alt="Canva Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvHTyza-N60IYD1Y3JGg42sTwmNwce5FLH84MvLYQ3Jj67eYV7YsR8i1ar9bMRmLSr3iMMvZCxWD1yp7-gnJ1e4Fnk2gyn1rMLXGnvIyWTlao4VoCtsYDch1sQZubrLxRSQ7dXtkiCh45rSUk0lATRxXJ3fdRM8iTn_YoMZK3RlXTpk8euK9lyJzF955QKYSKPAdfcNi8q2RYT7UCIgcHPEzUMH_IqrBFozP6BXyAnHHFqa_QDOgZVzaqo"/>
+</div>
+</div>
+<div class="md:col-span-11 space-y-md">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-sm">
+<h3 class="font-heading-lg text-heading-lg uppercase">Canva</h3>
+<span class="font-caption-md text-caption-md text-mute uppercase">2022 — Present</span>
+</div>
+<div>
+<p class="font-body-strong text-body-strong uppercase mb-xs">Senior Data Engineer</p>
+<p class="font-body-md text-body-md text-mute">Architecting global-scale data infrastructure to support millions of creative professionals. Focusing on high-concurrency ingestion and real-time analytics.</p>
+</div>
+</div>
+</div>
+<!-- Experience Item 2 -->
+<div class="reveal border-b border-hairline pb-section grid grid-cols-1 md:grid-cols-12 gap-xl group">
+<div class="md:col-span-1 flex justify-start items-start">
+<div class="w-16 h-16 flex items-center justify-center bg-surface-container rounded-lg overflow-hidden p-xs">
+<img alt="Servian Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLsou16v0V68qyCjq6G3LKKwBtcKGFdmFpIhDTF69zdpEka8qMNXisDaGX6luu2JBj_v103XDqOzTLj4KiiRx0Ilf1Whydd0aTXjpt88Cy5n_dqxNFxQSV-TP9r-Pe6J76hqSNCy7sL7pPZ3Z_QisImNDhvKyc_DT6VP_BuBkRtv2gI0h9ahxe0CMX2-v4_Q6OnSP-h95eg_xumRscia9jpAziZabIkpHSfsAKBMGADeKabJUo3hJN-Nmp3l"/>
+</div>
+</div>
+<div class="md:col-span-11 space-y-md">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-sm">
+<h3 class="font-heading-lg text-heading-lg uppercase">Servian</h3>
+<span class="font-caption-md text-caption-md text-mute uppercase">2020 — 2022</span>
+</div>
+<div>
+<p class="font-body-strong text-body-strong uppercase mb-xs">Data Consultant</p>
+<p class="font-body-md text-body-md text-mute">Delivered enterprise-grade cloud transformations for ASX-listed clients. Built complex DBT models and Snowflake data warehouses.</p>
+</div>
+</div>
+</div>
+<!-- Experience Item 3 -->
+<div class="reveal border-b border-hairline pb-section grid grid-cols-1 md:grid-cols-12 gap-xl group">
+<div class="md:col-span-1 flex justify-start items-start">
+<div class="w-16 h-16 flex items-center justify-center bg-surface-container rounded-lg overflow-hidden p-xs">
+<img alt="Telstra Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLueXSgoOHBZKdVaqDfrJoqzFzk6Y-HzAuJiwMLhR90c3HXlnwUYgy0h6XINroGsM3GK7zBZz-DPblsKrqbhY_Q3opZIMH9lbKj3WbmXTfuwpZ8GZ9Wik9zm-S0H7v7Xm9qGw02pKKqhWw6XcjvOzbElJcf0c18znCjN5vM-6iUrdfPHdXbuyqMhAJRRUZ5YFTYCTEiMTbHuk-E9iCMrz6gZG1S6ILyOnDT-x2jq7PzVMsGcy_bqFqlseniF"/>
+</div>
+</div>
+<div class="md:col-span-11 space-y-md">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-sm">
+<h3 class="font-heading-lg text-heading-lg uppercase">Telstra</h3>
+<span class="font-caption-md text-caption-md text-mute uppercase">2018 — 2020</span>
+</div>
+<div>
+<p class="font-body-strong text-body-strong uppercase mb-xs">Data Analyst</p>
+<p class="font-body-md text-body-md text-mute">Leveraging big data to optimize network performance and customer lifecycle management using Python and AWS stack.</p>
+</div>
+</div>
+</div>
+<!-- Experience Item 4 -->
+<div class="reveal border-b border-hairline pb-section grid grid-cols-1 md:grid-cols-12 gap-xl group">
+<div class="md:col-span-1 flex justify-start items-start">
+<div class="w-16 h-16 flex items-center justify-center bg-surface-container rounded-lg overflow-hidden p-xs">
+<img alt="Coles Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLsd2KBtoFRVWcIMJSCGlGDSY-DKgDC2CQuJoHq-eY2skUnZ1tvzQPJgUmsM8WP61mV67mzF8gEMcJPBKFsfhrSQ18pJtXkgY5MLszxUDo9LeBq12C6FCkrT1fHAFMdR2vzjBK76N5L37XLNvyyxjuRS0CO9T3qmHMFQL29rZbbl_WXPu3lN5rXH3v50wQcUB4v2MRob_Ct5G8RsCCUT15pMojJw5cEBiytbLlMVrNzQ0XApo-RmpUzu8DxL"/>
+</div>
+</div>
+<div class="md:col-span-11 space-y-md">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-sm">
+<h3 class="font-heading-lg text-heading-lg uppercase">Coles</h3>
+<span class="font-caption-md text-caption-md text-mute uppercase">2016 — 2018</span>
+</div>
+<div>
+<p class="font-body-strong text-body-strong uppercase mb-xs">Junior Data Engineer</p>
+<p class="font-body-md text-body-md text-mute">Developing supply chain intelligence platforms and retail inventory forecasting systems.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Expertise -->
+<section class="py-section px-section bg-soft-cloud" id="skills">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-display-campaign text-heading-xl uppercase tracking-tighter mb-xl text-center">Core Expertise</h2>
+<div class="flex flex-wrap justify-center gap-md max-w-4xl mx-auto reveal">
+<!-- Skill Chips with 8px base rhythm -->
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">Python</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-primary text-on-primary uppercase">AWS</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">DBT</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">Snowflake</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">Apache Spark</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">Terraform</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">Docker</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">Airflow</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">SQL</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">Kubernetes</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">GCP</span>
+<span class="px-xl py-md rounded-full border border-hairline font-button-sm text-button-sm bg-surface hover:bg-primary hover:text-on-primary transition-colors cursor-default uppercase">DevOps</span>
+</div>
+</div>
+</section>
+<!-- Accreditations -->
+<section class="py-section px-section bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row gap-section mb-xl">
+<div class="md:w-full">
+<h2 class="font-display-campaign text-heading-xl uppercase tracking-tighter">Accreditations</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-md reveal">
+<!-- Cert Card 1 -->
+<div class="bg-soft-cloud p-xl aspect-square flex flex-col justify-between group hover:bg-primary transition-all duration-500">
+<span class="material-symbols-outlined text-[48px] text-primary group-hover:text-on-primary transition-colors">cloud_done</span>
+<div>
+<h4 class="font-heading-md text-heading-md uppercase group-hover:text-on-primary">AWS Solutions Architect</h4>
+<p class="font-caption-sm text-caption-sm text-mute uppercase group-hover:text-on-primary/70">Professional</p>
+</div>
+</div>
+<!-- Cert Card 2 -->
+<div class="bg-soft-cloud p-xl aspect-square flex flex-col justify-between group hover:bg-primary transition-all duration-500">
+<span class="material-symbols-outlined text-[48px] text-primary group-hover:text-on-primary transition-colors">database</span>
+<div>
+<h4 class="font-heading-md text-heading-md uppercase group-hover:text-on-primary">SnowPro Core</h4>
+<p class="font-caption-sm text-caption-sm text-mute uppercase group-hover:text-on-primary/70">Certified Specialist</p>
+</div>
+</div>
+<!-- Cert Card 3 -->
+<div class="bg-soft-cloud p-xl aspect-square flex flex-col justify-between group hover:bg-primary transition-all duration-500">
+<span class="material-symbols-outlined text-[48px] text-primary group-hover:text-on-primary transition-colors">analytics</span>
+<div>
+<h4 class="font-heading-md text-heading-md uppercase group-hover:text-on-primary">DBT Analytics</h4>
+<p class="font-caption-sm text-caption-sm text-mute uppercase group-hover:text-on-primary/70">Certified Developer</p>
+</div>
+</div>
+<!-- Cert Card 4 -->
+<div class="bg-soft-cloud p-xl aspect-square flex flex-col justify-between group hover:bg-primary transition-all duration-500">
+<span class="material-symbols-outlined text-[48px] text-primary group-hover:text-on-primary transition-colors">terminal</span>
+<div>
+<h4 class="font-heading-md text-heading-md uppercase group-hover:text-on-primary">CKAD</h4>
+<p class="font-caption-sm text-caption-sm text-mute uppercase group-hover:text-on-primary/70">K8s Application Developer</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Background -->
+<section class="py-section px-section bg-primary text-on-primary">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-display-campaign text-heading-xl uppercase tracking-tighter mb-xl">Academic Background</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-section reveal">
+<div class="border-l border-on-primary/20 pl-xl">
+<h3 class="font-heading-lg text-heading-lg uppercase mb-xs">Monash University</h3>
+<p class="font-body-strong text-body-strong mb-sm uppercase">Master of Data Science</p>
+<p class="font-body-md text-body-md text-on-primary/70">Specialized in Advanced Machine Learning and Distributed Systems. Research focused on large-scale geospatial data processing.</p>
+</div>
+<div class="border-l border-on-primary/20 pl-xl">
+<h3 class="font-heading-lg text-heading-lg uppercase mb-xs">Chulalongkorn University</h3>
+<p class="font-body-strong text-body-strong mb-sm uppercase">Bachelor of Engineering</p>
+<p class="font-body-md text-body-md text-on-primary/70">First Class Honours. Computer Engineering core with emphasis on algorithm design and network architecture.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section bg-primary text-on-primary border-t border-hairline/10">
+<div class="max-w-7xl mx-auto px-section flex flex-col md:flex-row justify-between items-start md:items-center gap-xl">
+<div class="space-y-md">
+<span class="font-display-campaign text-heading-md text-on-primary uppercase">PERTH W.</span>
+<p class="font-caption-sm text-caption-sm tracking-widest uppercase text-on-primary/50">© 2024 PERTH WORATANA. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-xl">
+<div class="flex flex-col gap-xs">
+<p class="font-caption-sm text-caption-sm text-on-primary font-bold mb-xs uppercase">SOCIAL</p>
+<a class="font-caption-sm text-caption-sm text-on-primary/70 hover:text-on-primary transition-opacity uppercase" href="#">LINKEDIN</a>
+<a class="font-caption-sm text-caption-sm text-on-primary/70 hover:text-on-primary transition-opacity uppercase" href="#">GITHUB</a>
+<a class="font-caption-sm text-caption-sm text-on-primary/70 hover:text-on-primary transition-opacity uppercase" href="#">MEDIUM</a>
+<a class="font-caption-sm text-caption-sm text-on-primary/70 hover:text-on-primary transition-opacity uppercase" href="#">RESUME</a>
+</div>
+<div class="flex flex-col gap-xs">
+<p class="font-caption-sm text-caption-sm text-on-primary font-bold mb-xs uppercase">LOCATION</p>
+<p class="font-caption-sm text-caption-sm text-on-primary/70 uppercase">MELBOURNE, AU</p>
+<p class="font-caption-sm text-caption-sm text-on-primary/70 uppercase">REMOTE GLOBAL</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB -->
+<button class="fixed bottom-xl right-xl bg-primary text-on-primary w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50" id="contact-fab">
+<span class="material-symbols-outlined">mail</span>
+</button>
+<script>
+        // Simple reveal animation on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Header transparency shift
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-opacity-95', 'backdrop-blur-md');
+            } else {
+                header.classList.remove('bg-opacity-95', 'backdrop-blur-md');
+            }
+        });
+
+        // Navigation Active State Logic
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'font-bold');
+                link.classList.add('text-mute');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('text-primary', 'font-bold');
+                    link.classList.remove('text-mute');
+                }
+            });
+        });
+    </script>
+</body></html>

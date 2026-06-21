@@ -1,7 +1,8 @@
 # Portfolio website
 Vibe-coded portfolio website.
 
-Design system used: https://www.designmd.co/d/bmw
+Design system - BMW: https://www.designmd.co/d/bmw
+Design system - Notion: https://getdesign.md/notion/design-md 
 
 ## Prompt used
 
