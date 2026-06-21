@@ -6,13 +6,17 @@ Design system - Notion: https://getdesign.md/notion/design-md
 
 ## Prompt used
 
+[Antigravity or any AI tools] Convert LinkedIn Profile PDF -> Profile.md
+```
+Profile.pdf Turn this into md file
+```
 
 For Google Stitch:
 ```
 Create a design system using the file [bmw-DESIGN.md].
 
 
-Create 1 page website for [prd.md]
+Create 1 page website for [prd.md] with my profile [Profile.md]
 ```
 
 In Antigravity:
